@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import "./App.css";
-import AnimatedBackground from "./AnimatedBackground";
-
+import SnakeBackground from "./SnakeBackground"; // animated snake bg
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -57,20 +56,22 @@ function App() {
 
       {/* Hero */}
       <section className="hero">
-        <AnimatedBackground />
+        <SnakeBackground /> {/* animated snake bg */}
+
+        
         <motion.h1
           initial={{ opacity: 0, y: -40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          style={{ position: "relative", zIndex: 1 }}
+          style={{ position: "relative", zIndex: 2 }}
         >
-          Hi, I’m KunjSevak 
+          Hi, I’m Kunj Sevak
         </motion.h1>
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.7 }}
-          style={{ position: "relative", zIndex: 1 }}
+          style={{ position: "relative", zIndex: 2 }}
         >
           CS Student | Software Engineer | iOS & Web Developer | AI Enthusiast
         </motion.p>
@@ -79,7 +80,7 @@ function App() {
           initial="hidden"
           animate="visible"
           variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
-          style={{ position: "relative", zIndex: 1 }}
+          style={{ position: "relative", zIndex: 2 }}
         >
           <motion.a
             href="#projects"
@@ -89,7 +90,7 @@ function App() {
             View Projects
           </motion.a>
           <motion.a
-            href="/Users/kunj/Desktop/Kunj Portfolio/portfolio-website/public/Kunj_CV.pdf"
+            href="/Kunj_CV.pdf"
             className="btn btn-outline"
             whileHover={{ scale: 1.05, y: -2 }}
           >
@@ -108,7 +109,11 @@ function App() {
       >
         <h2>About Me</h2>
         <motion.p custom={1} variants={sectionVariant}>
-        Hi! I’m a final-year Computer Science student at San Francisco State University, actively seeking software development opportunities. I build web and mobile apps, explore machine learning, and enjoy turning challenging problems into impactful solutions. Skilled in Java, Python, Swift, React, Flask, AWS, and SQL.
+          Hi! I’m a final-year Computer Science student at San Francisco State
+          University, actively seeking software development opportunities. I
+          build web and mobile apps, explore machine learning, and enjoy turning
+          challenging problems into impactful solutions. Skilled in Java,
+          Python, Swift, React, Flask, AWS, and SQL.
         </motion.p>
       </motion.section>
 
@@ -126,18 +131,18 @@ function App() {
             {
               title: "Triumph Tracker (Accountability App)",
               desc: "Full-stack accountability app with AI-driven features, React Native UI, Flask backend on AWS, and SQL database.",
-              tech: "AWS, Flask, React Native, Python, SQL"
+              tech: "AWS, Flask, React Native, Python, SQL",
             },
             {
-              title: "SKVA iOS Weather App",
+              title: "Skyva iOS Weather App",
               desc: "Real-time weather updates and trip summaries with SpeechKit, Apple Maps, and calendar-based scheduling.",
-              tech: "Swift, OpenWeather API, Apple Maps, SpeechKit"
+              tech: "Swift, OpenWeather API, Apple Maps, SpeechKit",
             },
             {
               title: "Heart Disease Prediction (ML)",
               desc: "ML pipeline using UCI dataset with KNN preprocessing, feature scaling, and SVM (90% accuracy).",
-              tech: "Python, Scikit-learn, Pandas, NumPy"
-            }
+              tech: "Python, Scikit-learn, Pandas, NumPy",
+            },
           ].map((proj, i) => (
             <motion.div
               key={i}
@@ -151,7 +156,9 @@ function App() {
             >
               <h3>{proj.title}</h3>
               <p>{proj.desc}</p>
-              <p><b>Tech:</b> {proj.tech}</p>
+              <p>
+                <b>Tech:</b> {proj.tech}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -168,9 +175,19 @@ function App() {
         <h2>Skills</h2>
         <div className="skills-grid">
           {[
-            { title: "Languages", content: "Java, Python, Swift, C++, C, SQL, JavaScript, HTML/CSS" },
-            { title: "Frameworks & Tools", content: "React.js, React Native, Flask, AWS, Scikit-learn, Pandas, NumPy, Git" },
-            { title: "Databases & APIs", content: "MongoDB, MySQL, OpenWeather API, Apple Maps, iOS SDK" }
+            {
+              title: "Languages",
+              content: "Java, Python, Swift, C++, C, SQL, JavaScript, HTML/CSS",
+            },
+            {
+              title: "Frameworks & Tools",
+              content:
+                "React.js, React Native, Flask, AWS, Scikit-learn, Pandas, NumPy, Git",
+            },
+            {
+              title: "Databases & APIs",
+              content: "MongoDB, MySQL, OpenWeather API, Apple Maps, iOS SDK",
+            },
           ].map((skill, i) => (
             <motion.div
               key={i}
@@ -199,8 +216,7 @@ function App() {
       >
         <h2>Let’s Connect</h2>
         <motion.p custom={1} variants={sectionVariant}>
-          
-              Feel free to reach out for opportunities, collaborations, or just to say hi!
+          Feel free to reach out for opportunities, collaborations, or just to say hi!
         </motion.p>
         <motion.div
           className="contact-icons"
@@ -211,7 +227,7 @@ function App() {
           {[
             { name: "GitHub", link: "https://github.com/KunjSevak1919" },
             { name: "LinkedIn", link: "https://linkedin.com/in/kunjsevak" },
-            { name: "Email", link: "mailto:jsevak11@gmail.com" }
+            { name: "Email", link: "mailto:jsevak11@gmail.com" },
           ].map((icon, i) => (
             <motion.a
               key={i}
