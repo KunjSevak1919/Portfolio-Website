@@ -73,7 +73,7 @@ function App() {
           transition={{ delay: 0.4, duration: 0.7 }}
           style={{ position: "relative", zIndex: 2 }}
         >
-          CS Student | Software Engineer | iOS & Web Developer | AI Enthusiast
+          CS Student | Aspiring Software Engineer | iOS & Web Developer | AI Enthusiast
         </motion.p>
         <motion.div
           className="buttons"
