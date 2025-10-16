@@ -90,7 +90,7 @@ function App() {
             View Projects
           </motion.a>
           <motion.a
-            href="/Kunj_CV.pdf"
+            href="/KunjResume.pdf"
             className="btn btn-outline"
             whileHover={{ scale: 1.05, y: -2 }}
           >
